@@ -61,8 +61,10 @@ env:
 local_conf_header:
   freedom-u-sdk-common: |
     USER_CLASSES:append = " buildhistory buildstats buildstats-summary"
+    EXTRA_IMAGE_FEATURES ?= "debug-tweaks allow-empty-password allow-root-login bash-completion-pkgs dev-pkgs doc doc-pkgs ssh-server-openssh tools-sdk"
     INHERIT:append = " rm_work"
     RM_OLD_IMAGE = "1"
+    IMAGE_INSTALL:append = " apt autoconf bash bash-completion cmake cpio dhcpcd dosfstools dpkg dtc e2fsprogs elfutils gcc gdb gzip logrotate net-tools ninja opensbi-sifive openssh pixman pm-utils python3 python3-build python3-cython python3-dtc python3-git python3-installer python3-jinja2 python3-maturin python3-numpy python3-pip python3-setuptools rsync rust sudo tzdata unzip wget which xset xz zip zlib"
 
   qemu-native: |
     PACKAGECONFIG:append:pn-qemu-system-native = " sdl"

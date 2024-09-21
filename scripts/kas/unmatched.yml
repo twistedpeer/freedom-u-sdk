@@ -3,8 +3,9 @@ header:
   includes:
     - scripts/kas/include/freedom-u-sdk-common.yml
 
-target:
- - demo-coreip-cli
- - demo-coreip-xfce4
+target: [
+  demo-coreip-cli,
+  #demo-coreip-xfce4,
+]
 
 machine: unmatched
